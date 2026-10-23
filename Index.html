@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Permite utilizar caracteres como ñ y tildes -->
+    <meta charset="UTF-8">
+
+    <!-- Adapta la página al ancho de celulares y computadores -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Validación de formularios</title>
+
+    <!-- Conecta este documento con el archivo de estilos CSS -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <!-- Contenedor principal del formulario -->
+    <main class="contenedor">
+
+        <!-- Título principal de la página -->
+        <h1>Registro de estudiantes</h1>
+
+        <!-- Explica al usuario qué debe hacer -->
+        <p>Completa tus datos para registrarte.</p>
+
+        <!--
+            novalidate desactiva los mensajes automáticos del navegador.
+            Así podemos enseñar y controlar nuestros propios mensajes
+            de validación mediante JavaScript.
+        -->
+        <form id="formulario" novalidate>
+
+            <!-- Campo para escribir el nombre -->
+            <div class="grupo">
+                <label for="nombre">Nombre completo:</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Ej. Ana Pérez"
+                    autocomplete="name"
+                >
+                <!-- Aquí JavaScript mostrará el error del nombre -->
+                <small class="error" id="errorNombre"></small>
+            </div>
+
+            <!-- Campo para escribir el correo electrónico -->
+            <div class="grupo">
+                <label for="correo">Correo electrónico:</label>
+                <input
+                    type="email"
+                    id="correo"
+                    placeholder="ana@ejemplo.com"
+                    autocomplete="email"
+                >
+                <!-- Aquí aparecerá el error del correo -->
+                <small class="error" id="errorCorreo"></small>
+            </div>
+
+            <!-- Campo para ingresar la edad -->
+            <div class="grupo">
+                <label for="edad">Edad:</label>
+                <input
+                    type="number"
+                    id="edad"
+                    placeholder="Ej. 18"
+                    min="16"
+                    max="100"
+                >
+                <!-- Aquí aparecerá el error de la edad -->
+                <small class="error" id="errorEdad"></small>
+            </div>
+
+            <!-- Campo para crear una contraseña -->
+            <div class="grupo">
+                <label for="contrasena">Contraseña:</label>
+                <input
+                    type="password"
+                    id="contrasena"
+                    placeholder="Mínimo 8 caracteres"
+                    autocomplete="new-password"
+                >
+                <!-- Aquí aparecerá el error de la contraseña -->
+                <small class="error" id="errorContrasena"></small>
+            </div>
+
+            <!-- Campo para confirmar la contraseña -->
+            <div class="grupo">
+                <label for="confirmar">Confirmar contraseña:</label>
+                <input
+                    type="password"
+                    id="confirmar"
+                    placeholder="Escribe la contraseña otra vez"
+                    autocomplete="new-password"
+                >
+                <!-- Aquí aparecerá el error de confirmación -->
+                <small class="error" id="errorConfirmar"></small>
+            </div>
+
+            <!-- Botón que intenta enviar el formulario -->
+            <button type="submit">Registrarme</button>
+
+            <!-- Mensaje general de éxito o de corrección -->
+            <p id="mensajeGeneral" role="status" aria-live="polite"></p>
+
+        </form>
+    </main>
+
+    <!-- Carga JavaScript después de construir el HTML -->
+    <script src="app.js"></script>
+</body>
+</html>
