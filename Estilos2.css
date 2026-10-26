@@ -9,3 +9,7 @@ body{
 .caja2{
     background-color: aqua;
 }
+.caja3 {
+border-radius: 50%;
+border-color: aquamarine;
+}
